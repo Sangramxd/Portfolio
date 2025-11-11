@@ -172,22 +172,59 @@ function initContactForm() {
     const formMessage = document.getElementById('formMessage');
     
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            // Get form data
+            const formData = new FormData(form);
+            const name = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const subject = form.querySelectorAll('input[type="text"]')[1].value;
+            const message = form.querySelector('textarea').value;
+            
+            // Show sending message
             formMessage.textContent = 'Sending message...';
             formMessage.className = 'form-message-minimal';
             formMessage.style.display = 'block';
             
-            setTimeout(() => {
-                formMessage.textContent = 'Thank you! Your message has been received!';
+            try {
+                // Option 1: Using Formspree (Free service)
+                // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
+                // Get it from: https://formspree.io/
+                const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message,
+                        _replyto: email
+                    })
+                });
+                
+                if (response.ok) {
+                    formMessage.textContent = 'Thank you! Your message has been received! I\'ll get back to you soon.';
+                    formMessage.className = 'form-message-minimal success';
+                    form.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                // Fallback: Use mailto link
+                const mailtoLink = `mailto:sangrams@andrew.cmu.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+                window.location.href = mailtoLink;
+                
+                formMessage.textContent = 'Opening your email client... If it doesn\'t open, please email me directly at sangrams@andrew.cmu.edu';
                 formMessage.className = 'form-message-minimal success';
                 form.reset();
-                
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 1500);
+            }
+            
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 8000);
         });
     }
 }
