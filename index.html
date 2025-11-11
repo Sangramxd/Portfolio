@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangram Kumar Sahoo - Creative Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Page Loader with 3D Rotating Text Ring -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-wrapper">
+            <div class="text-ring-3d" id="textRing3D">
+                <div class="ring-text">GREATNESS LOADING DESIGN THAT INSPIRES CREATIVE SOLUTIONS RESEARCH INNOVATION EXCELLENCE</div>
+            </div>
+            <div class="loader-percentage" id="loaderPercentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-name">SANGRAM<br>KUMAR SAHOO</span>
+            </div>
+            <div class="nav-links">
+                <a href="#resume" class="nav-link">[ RESUME ]</a>
+                <a href="#about" class="nav-link">[ ABOUT ME ]</a>
+                <a href="#works" class="nav-link">[ WORKS ]</a>
+                <a href="#services" class="nav-link">[ SERVICES ]</a>
+                <a href="#connect" class="nav-link">[ CONNECT ]</a>
+            </div>
+            <a href="#connect" class="contact-link">CONTACT ME <span class="arrow">↗</span></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Minimalist Black/White Design -->
+    <section class="hero-minimal" id="home">
+        <div class="hero-content-minimal">
+            <div class="hero-title-wrapper">
+                <h1 class="hero-title-large">
+                    <span class="title-left">CREATIVE</span>
+                    <span class="title-right">RESEARCHER</span>
+                </h1>
+                <p class="hero-location">BASED IN PITTSBURGH, USA</p>
+            </div>
+            
+            <div class="hero-image-container-below">
+                <div class="hero-portrait-wrapper">
+                    <img src="profile.jpg" alt="Sangram Kumar Sahoo" class="hero-portrait" id="heroPortrait">
+                </div>
+            </div>
+            
+            <div class="hero-visual-section">
+                <div class="hero-services-left">
+                    <div class="service-item-bold">/RESEARCH</div>
+                    <div class="service-item-bold">/STUDENT</div>
+                    <div class="service-item-bold">/PHOTOGRAPHER</div>
+                </div>
+                
+                <div class="hero-bio">
+                    <p>I'M A MOTIVATED MASTERS STUDENT IN MECHANICAL ENGINEERING AT CARNEGIE MELLON UNIVERSITY, PURSUING EXCELLENCE IN RESEARCH WITH A 4.0 GPA. MY PASSION LIES IN ADVANCING THE FRONTIERS OF MACHINE LEARNING, ROBOTICS, AND COMPUTATIONAL ENGINEERING. I AM ACTIVELY SEEKING OPPORTUNITIES TO CONTINUE MY ACADEMIC JOURNEY THROUGH A PHD PROGRAM, WHERE I CAN CONTRIBUTE TO GROUNDBREAKING RESEARCH AND INNOVATION.</p>
+                </div>
+            </div>
+            
+            <div class="hero-footer">
+                <div class="hero-footer-left">AVAILABLE FOR COLLABORATION</div>
+                <div class="hero-footer-right">
+                    <span class="recent-label">RECENT WORK ></span>
+                    <span class="recent-project">SLAM SIMULATION</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume-section-split" id="resume">
+        <div class="split-section-top">
+            <div class="section-content-top">
+                <h2 class="section-title-large">RESUME</h2>
+            </div>
+        </div>
+        <div class="split-section-bottom">
+            <div class="section-content-bottom">
+                <div class="page-indicator">1/6</div>
+                <div class="section-text-wrapper">
+                    <p class="section-prefix">VIEW</p>
+                    <h3 class="section-title-bottom">CREDENTIALS</h3>
+                    <p class="section-subtitle-bottom">EXPERIENCE</p>
+                </div>
+                <div class="section-identifier">RSME/1</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Content Section -->
+    <section class="resume-content-detailed">
+        <div class="section-container">
+            <div class="resume-download-header">
+                <button class="download-btn-resume" onclick="window.print()">DOWNLOAD PDF →</button>
+            </div>
+            <div class="resume-detailed-content">
+                <div class="resume-section-item">
+                    <h3>EDUCATION</h3>
+                    <div class="resume-entry-item">
+                        <h4>MS in Mechanical Engineering</h4>
+                        <p class="resume-meta">Carnegie Mellon University | Expected May 2026 | GPA: 4.0/4.0</p>
+                        <p>Subjects: MLAI for Engineers, Modern Control Theory, Soft Robots, Intro to Deep Learning, Engineering a Startup</p>
+                    </div>
+                    <div class="resume-entry-item">
+                        <h4>BTech in Mechanical Engineering</h4>
+                        <p class="resume-meta">SRM Institute of Science and Technology, Chennai | May 2023 | GPA: 8.7/10</p>
+                    </div>
+                </div>
+
+                <div class="resume-section-item">
+                    <h3>PROFESSIONAL EXPERIENCE</h3>
+                    <div class="resume-entry-item">
+                        <h4>Graduate Researcher - Shapeanalysis Team</h4>
+                        <p class="resume-meta">Computational Engineering and Robotics Lab (CERLAB), CMU, Pittsburgh | May 2025 - Present</p>
+                        <ul class="resume-bullets">
+                            <li>Working on a graph neural net on engineering drawing for classification and image marking on different drawings.</li>
+                            <li>Studied different research papers on the relevant topic for this project.</li>
+                        </ul>
+                    </div>
+                    <div class="resume-entry-item">
+                        <h4>Graduate Researcher - RoboConstruction Team</h4>
+                        <p class="resume-meta">CERLAB, CMU, Pittsburgh | Aug 2024 - May 2025</p>
+                        <ul class="resume-bullets">
+                            <li>Developed an Isaac Sim simulation environment for SLAM test bed with the ultimate goal of developing a SLAM algorithm for mining environment.</li>
+                            <li>Simulated different LiDARs and camera integration for simple hauling and loading operation for the wheel loader in a simulated environment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="resume-section-item">
+                    <h3>SKILLS</h3>
+                    <div class="skills-resume-grid">
+                        <div class="skill-category-resume">
+                            <h4>Frameworks</h4>
+                            <p>Python (PyTorch, TensorFlow, CUDA, PySpark, OpenCV), C++, Docker, ROS, Kotlin</p>
+                        </div>
+                        <div class="skill-category-resume">
+                            <h4>Database & Cloud</h4>
+                            <p>Google Cloud Platform (GCP), AWS, Power BI</p>
+                        </div>
+                        <div class="skill-category-resume">
+                            <h4>Software</h4>
+                            <p>Solidworks, AutoCAD, Matlab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section - Split Black/White Design -->
+    <section class="about-section-split" id="about">
+        <div class="split-section-top">
+            <div class="section-content-top">
+                <h2 class="section-title-large">ABOUT ME</h2>
+            </div>
+        </div>
+        <div class="split-section-bottom">
+            <div class="section-content-bottom">
+                <div class="page-indicator">2/6</div>
+                <div class="section-text-wrapper">
+                    <p class="section-prefix">FOR ME</p>
+                    <h3 class="section-title-bottom">RESEARCH</h3>
+                    <p class="section-subtitle-bottom">IS NOT JUST</p>
+                </div>
+                <div class="section-identifier">RSCH/2</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content-section">
+        <div class="section-container">
+            <div class="about-detailed-content">
+                <div class="about-text-block">
+                    <h3>EDUCATION</h3>
+                    <div class="education-item">
+                        <h4>MS IN MECHANICAL ENGINEERING</h4>
+                        <p class="education-org">Carnegie Mellon University | Expected May 2026</p>
+                        <p class="education-gpa">GPA: 4.0/4.0</p>
+                        <p class="education-desc">Pursuing advanced studies in Machine Learning for Engineers, Modern Control Theory, Soft Robots, Deep Learning, and Engineering Entrepreneurship. Maintaining perfect academic performance while conducting cutting-edge research at CMU's Computational Engineering and Robotics Lab.</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>BTECH IN MECHANICAL ENGINEERING</h4>
+                        <p class="education-org">SRM Institute of Science and Technology, Chennai | May 2023</p>
+                        <p class="education-gpa">GPA: 8.7/10</p>
+                        <p class="education-desc">Strong foundation in mechanical engineering principles, computational methods, and design. Completed thesis on pedicle screw fixation design using finite element analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="about-text-block">
+                    <h3>RESEARCH PHILOSOPHY</h3>
+                    <p>Research, for me, is not just a pursuit of knowledge—it's a commitment to solving real-world problems through innovative engineering solutions. My work spans the intersection of machine learning, robotics, and computational engineering, where I aim to bridge theoretical advances with practical applications.</p>
+                    <p>As a motivated graduate student with a perfect 4.0 GPA, I am actively seeking opportunities to continue my academic journey through a PhD program. My research interests focus on developing intelligent systems that can operate in complex, dynamic environments—from underwater robotics for environmental monitoring to neural architecture search for security applications.</p>
+                    <p>I believe that the future of engineering lies in the seamless integration of AI, robotics, and traditional mechanical systems. Through my PhD studies, I aim to contribute to this vision by developing novel algorithms and systems that push the boundaries of what's possible.</p>
+                </div>
+
+                <div class="about-text-block">
+                    <h3>RESEARCH EXPERIENCE</h3>
+                    <div class="research-item-detailed">
+                        <h4>Graduate Researcher - Shapeanalysis Team</h4>
+                        <p class="research-org">CERLAB, CMU | May 2025 - Present</p>
+                        <p>Working on graph neural networks for engineering drawing classification and image marking. Studying state-of-the-art research papers and developing novel approaches for automated design analysis.</p>
+                    </div>
+                    <div class="research-item-detailed">
+                        <h4>Graduate Researcher - RoboConstruction Team</h4>
+                        <p class="research-org">CERLAB, CMU | Aug 2024 - May 2025</p>
+                        <p>Developed Isaac Sim simulation environment for SLAM test bed, with the ultimate goal of creating SLAM algorithms for mining environments. Simulated different LiDAR and camera integrations for wheel loader operations in complex terrains.</p>
+                    </div>
+                    <div class="research-item-detailed">
+                        <h4>Design of Pedicle Screw Fixation</h4>
+                        <p class="research-org">SRM Institute | Jan - May 2023</p>
+                        <p>Developed finite element models to study pedicle screw fixation and the effect of screw variations on stress distribution in lumbar spine applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="works-section-split" id="works">
+        <div class="split-section-top">
+            <div class="section-content-top">
+                <h2 class="section-title-large">WORKS</h2>
+            </div>
+        </div>
+        <div class="split-section-bottom">
+            <div class="section-content-bottom">
+                <div class="page-indicator">3/6</div>
+                <div class="section-text-wrapper">
+                    <p class="section-prefix">FEATURED</p>
+                    <h3 class="section-title-bottom">PROJECTS</h3>
+                    <p class="section-subtitle-bottom">INNOVATION</p>
+                </div>
+                <div class="section-identifier">WRKS/3</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-grid-section">
+        <div class="section-container">
+            <div class="projects-grid-minimal">
+                <div class="project-item-minimal">
+                    <div class="project-number">01</div>
+                    <h3 class="project-title-minimal">WATER PURITY DETECTION SYSTEM</h3>
+                    <p class="project-date">Aug - Dec 2024</p>
+                    <p class="project-desc-minimal">Developed a bio-inspired soft robotic device that monitors water quality and detects potential of hydrogen (pH) levels in water bodies. This project addresses the limitations of stationary sensors and manual sampling methods by creating an autonomous underwater drone system capable of dynamic water quality monitoring in real-time.</p>
+                    <div class="project-tags-minimal">
+                        <span>PYTHON</span>
+                        <span>ROBOTICS</span>
+                        <span>IOT</span>
+                        <span>SOFT ROBOTICS</span>
+                    </div>
+                </div>
+                
+                <div class="project-item-minimal">
+                    <div class="project-number">02</div>
+                    <h3 class="project-title-minimal">DEEPFAKE VOICE DETECTION</h3>
+                    <p class="project-date">Jan - May 2025</p>
+                    <p class="project-desc-minimal">Implemented a Reinforcement Learning-based neural architecture search framework for deepfake voice detection. Established comprehensive data processing pipeline for audio preprocessing and feature extraction. Achieved state-of-the-art performance with an Equal Error Rate (EER) of 2.8% using baseline models trained for 50 epochs. Currently refining the NAS framework for optimal architecture discovery.</p>
+                    <div class="project-tags-minimal">
+                        <span>PYTORCH</span>
+                        <span>REINFORCEMENT LEARNING</span>
+                        <span>AUDIO PROCESSING</span>
+                        <span>NAS</span>
+                    </div>
+                </div>
+                
+                <div class="project-item-minimal">
+                    <div class="project-number">03</div>
+                    <h3 class="project-title-minimal">SLAM SIMULATION ENVIRONMENT</h3>
+                    <p class="project-date">Aug 2024 - May 2025</p>
+                    <p class="project-desc-minimal">Developed an Isaac Sim simulation environment for SLAM test bed with the ultimate goal of creating SLAM algorithms for mining environments. Simulated different LiDAR and camera integrations for simple hauling and loading operations for wheel loaders in complex simulated environments. This work contributes to autonomous navigation in challenging industrial settings.</p>
+                    <div class="project-tags-minimal">
+                        <span>C++</span>
+                        <span>ROS</span>
+                        <span>ISAAC SIM</span>
+                        <span>LIDAR</span>
+                    </div>
+                </div>
+
+                <div class="project-item-minimal">
+                    <div class="project-number">04</div>
+                    <h3 class="project-title-minimal">GRAPH NEURAL NETWORKS FOR ENGINEERING DRAWINGS</h3>
+                    <p class="project-date">May 2025 - Present</p>
+                    <p class="project-desc-minimal">Working on graph neural networks for engineering drawing classification and automated image marking. This research involves studying state-of-the-art papers and developing novel approaches for understanding and processing technical drawings using deep learning techniques.</p>
+                    <div class="project-tags-minimal">
+                        <span>PYTORCH</span>
+                        <span>GRAPH NEURAL NETWORKS</span>
+                        <span>COMPUTER VISION</span>
+                        <span>DEEP LEARNING</span>
+                    </div>
+                </div>
+
+                <div class="project-item-minimal">
+                    <div class="project-number">05</div>
+                    <h3 class="project-title-minimal">PEDICLE SCREW FIXATION DESIGN</h3>
+                    <p class="project-date">Jan - May 2023</p>
+                    <p class="project-desc-minimal">Developed finite element models to study pedicle screw fixation and the effect of screw variations by analyzing different sizes and materials. Observed stress distribution patterns on different screws with varying forces applied on vertebrae, contributing to improved spinal implant design.</p>
+                    <div class="project-tags-minimal">
+                        <span>FEA</span>
+                        <span>SOLIDWORKS</span>
+                        <span>BIOMECHANICS</span>
+                        <span>MATLAB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section-split" id="services">
+        <div class="split-section-top">
+            <div class="section-content-top">
+                <h2 class="section-title-large">SERVICES</h2>
+            </div>
+        </div>
+        <div class="split-section-bottom">
+            <div class="section-content-bottom">
+                <div class="page-indicator">4/6</div>
+                <div class="section-text-wrapper">
+                    <p class="section-prefix">WHAT I</p>
+                    <h3 class="section-title-bottom">OFFER</h3>
+                    <p class="section-subtitle-bottom">EXPERTISE</p>
+                </div>
+                <div class="section-identifier">SRVC/4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid-section">
+        <div class="section-container">
+            <div class="services-grid-minimal">
+                <div class="service-card-minimal">
+                    <div class="service-icon">🔬</div>
+                    <h3>RESEARCH & DEVELOPMENT</h3>
+                    <p>Academic research in Machine Learning, Robotics, and Computational Engineering. Experience in developing novel algorithms and systems for real-world applications.</p>
+                </div>
+                <div class="service-card-minimal">
+                    <div class="service-icon">🤖</div>
+                    <h3>ROBOTICS & AUTONOMY</h3>
+                    <p>SLAM algorithms, simulation environments, and robotic systems development. Expertise in Isaac Sim, ROS, and LiDAR integration for autonomous navigation.</p>
+                </div>
+                <div class="service-card-minimal">
+                    <div class="service-icon">🧠</div>
+                    <h3>MACHINE LEARNING & AI</h3>
+                    <p>Neural Networks, Reinforcement Learning, Graph Neural Networks, and Neural Architecture Search. Specialized in deep learning for engineering applications.</p>
+                </div>
+                <div class="service-card-minimal">
+                    <div class="service-icon">💻</div>
+                    <h3>SOFTWARE DEVELOPMENT</h3>
+                    <p>Python (PyTorch, TensorFlow, CUDA), C++, ROS, Docker. Full-stack development for research applications and engineering solutions.</p>
+                </div>
+                <div class="service-card-minimal">
+                    <div class="service-icon">📊</div>
+                    <h3>DATA ANALYSIS</h3>
+                    <p>Comprehensive data processing pipelines, feature extraction, and statistical analysis. Experience with GCP, AWS, and Power BI for large-scale data handling.</p>
+                </div>
+                <div class="service-card-minimal">
+                    <div class="service-icon">🎓</div>
+                    <h3>ACADEMIC COLLABORATION</h3>
+                    <p>Seeking PhD opportunities to continue research in ML, Robotics, and Computational Engineering. Open to collaborations and research partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="connect-section-split" id="connect">
+        <div class="split-section-top">
+            <div class="section-content-top">
+                <h2 class="section-title-large">CONNECT</h2>
+            </div>
+        </div>
+        <div class="split-section-bottom">
+            <div class="section-content-bottom">
+                <div class="page-indicator">5/6</div>
+                <div class="section-text-wrapper">
+                    <p class="section-prefix">LET'S</p>
+                    <h3 class="section-title-bottom">COLLABORATE</h3>
+                    <p class="section-subtitle-bottom">TOGETHER</p>
+                </div>
+                <div class="section-identifier">CNCT/5</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section-minimal">
+        <div class="section-container">
+            <div class="contact-wrapper-minimal">
+                <div class="contact-info-minimal">
+                    <h3>GET IN TOUCH</h3>
+                    <p class="contact-intro-text">I'm actively seeking PhD opportunities and research collaborations. Whether you're a potential advisor, research partner, or industry collaborator, I'd love to connect and discuss how we can advance the frontiers of engineering together.</p>
+                    <div class="contact-details-minimal">
+                        <a href="mailto:sangrams@andrew.cmu.edu" class="contact-item-minimal">
+                            <span>EMAIL:</span>
+                            <span>sangrams@andrew.cmu.edu</span>
+                        </a>
+                        <a href="tel:+19843745204" class="contact-item-minimal">
+                            <span>PHONE:</span>
+                            <span>+1 (984) 374-5204</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sangramksahoo" target="_blank" class="contact-item-minimal">
+                            <span>LINKEDIN:</span>
+                            <span>linkedin.com/in/sangramksahoo</span>
+                        </a>
+                        <div class="contact-item-minimal">
+                            <span>LOCATION:</span>
+                            <span>Pittsburgh, PA, USA</span>
+                        </div>
+                        <div class="contact-item-minimal">
+                            <span>STATUS:</span>
+                            <span>Available for PhD Applications & Research Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form-minimal" id="contactForm">
+                    <div class="form-group-minimal">
+                        <input type="text" class="form-input-minimal" placeholder="NAME" required>
+                    </div>
+                    <div class="form-group-minimal">
+                        <input type="email" class="form-input-minimal" placeholder="EMAIL" required>
+                    </div>
+                    <div class="form-group-minimal">
+                        <input type="text" class="form-input-minimal" placeholder="SUBJECT" required>
+                    </div>
+                    <div class="form-group-minimal">
+                        <textarea class="form-input-minimal form-textarea-minimal" placeholder="MESSAGE" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn-minimal">SEND MESSAGE →</button>
+                    <div class="form-message-minimal" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-container">
+            <p>&copy; 2025 SANGRAM KUMAR SAHOO. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
