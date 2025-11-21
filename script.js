@@ -1,63 +1,66 @@
-// Create 3D Rotating Text Ring for Loader
-function createTextRing() {
-    const textRing = document.getElementById('textRing3D');
-    if (!textRing) return;
-    
-    const text = "GREATNESS LOADING ";
-    const radius = 270;
-    const centerX = 300;
-    const centerY = 300;
-    
-    // Create SVG for circular text
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('width', '600');
-    svg.setAttribute('height', '600');
-    svg.setAttribute('viewBox', '0 0 600 600');
-    svg.style.transformStyle = 'preserve-3d';
-    
-    // Create circle path
-    const circlePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    // Create a full circle path
-    const pathData = `M ${centerX}, ${centerY - radius} A ${radius}, ${radius} 0 0, 1 ${centerX + radius}, ${centerY} A ${radius}, ${radius} 0 0, 1 ${centerX}, ${centerY + radius} A ${radius}, ${radius} 0 0, 1 ${centerX - radius}, ${centerY} A ${radius}, ${radius} 0 0, 1 ${centerX}, ${centerY - radius}`;
-    circlePath.setAttribute('id', 'textCircle');
-    circlePath.setAttribute('d', pathData);
-    circlePath.setAttribute('fill', 'none');
-    
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    defs.appendChild(circlePath);
-    svg.appendChild(defs);
-    
-    // Create text element
-    const textElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    textElement.setAttribute('font-size', '32');
-    textElement.setAttribute('font-weight', '900');
-    textElement.setAttribute('fill', '#000000');
-    textElement.setAttribute('letter-spacing', '0.2em');
-    textElement.setAttribute('text-transform', 'uppercase');
-    
-    // Create textPath
-    const textPath = document.createElementNS('http://www.w3.org/2000/svg', 'textPath');
-    textPath.setAttribute('href', '#textCircle');
-    textPath.setAttribute('startOffset', '0%');
-    textPath.textContent = text + ' ' + text; // Duplicate for continuous loop
-    
-    textElement.appendChild(textPath);
-    svg.appendChild(textElement);
-    
-    // Clear and add SVG
-    textRing.innerHTML = '';
-    textRing.appendChild(svg);
+// Build a PNG loader ring using canvas so the asset can spin in 3D
+function generateLoaderImage() {
+    const loaderImage = document.getElementById('loaderImage');
+    if (!loaderImage) return;
+
+    const canvas = document.createElement('canvas');
+    const size = 640;
+    const radius = 230;
+    canvas.width = size;
+    canvas.height = size;
+
+    const ctx = canvas.getContext('2d');
+    const center = size / 2;
+
+    ctx.translate(center, center);
+
+    // Draw ring
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, Math.PI * 2);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = '#000000';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = '#ffffff';
+    ctx.arc(0, 0, radius - 18, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Circular text
+    const text = 'GREATNESS LOADING · ';
+    ctx.fillStyle = '#000000';
+    ctx.font = '700 20px "Space Grotesk", "Inter", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    for (let i = 0; i < text.length; i++) {
+        const angle = (i / text.length) * Math.PI * 2;
+        const x = Math.cos(angle) * (radius - 10);
+        const y = Math.sin(angle) * (radius - 10);
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle + Math.PI / 2);
+        ctx.fillText(text[i], 0, 0);
+        ctx.restore();
+    }
+
+    // Center text
+    ctx.font = '900 42px "Space Grotesk", "Inter", sans-serif';
+    ctx.fillText('GREATNESS', 0, -18);
+    ctx.fillText('LOADING', 0, 32);
+
+    loaderImage.src = canvas.toDataURL('image/png');
 }
 
 // Page Loader Animation
 function initPageLoader() {
     const loader = document.getElementById('pageLoader');
     const loaderPercentage = document.getElementById('loaderPercentage');
-    
+
     if (!loader || !loaderPercentage) return;
-    
-    // Create text ring
-    createTextRing();
+
+    // Create rotating loader image
+    generateLoaderImage();
     
     let progress = 0;
     const interval = setInterval(() => {
