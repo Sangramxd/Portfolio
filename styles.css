@@ -1079,8 +1079,8 @@ table {
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
-    right: clamp(1.5rem, 3vw, 3rem);
-    bottom: clamp(2rem, 4vw, 4rem);
+    bottom: 2rem;
+    right: 2rem;
     width: 50px;
     height: 50px;
     background: var(--black);
@@ -1111,7 +1111,7 @@ table {
     background: var(--white);
     color: var(--black);
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .scroll-to-top:active {
@@ -1121,7 +1121,22 @@ table {
 .scroll-arrow {
     display: block;
     line-height: 1;
-    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 18px;
+    }
+    
+    .scroll-arrow {
+        font-size: 20px;
+    }
 }
 
 /* Responsive Design */
