@@ -3,7 +3,7 @@ function createTextRing() {
     const textRing = document.getElementById('textRing3D');
     if (!textRing) return;
     
-    const text = "GREATNESS LOADING DESIGN THAT INSPIRES CREATIVE SOLUTIONS RESEARCH INNOVATION EXCELLENCE";
+    const text = "GREATNESS LOADING ";
     const radius = 270;
     const centerX = 300;
     const centerY = 300;

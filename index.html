@@ -14,7 +14,7 @@
     <div class="page-loader" id="pageLoader">
         <div class="loader-wrapper">
             <div class="text-ring-3d" id="textRing3D">
-                <div class="ring-text">GREATNESS LOADING DESIGN THAT INSPIRES CREATIVE SOLUTIONS RESEARCH INNOVATION EXCELLENCE</div>
+                <div class="ring-text">GREATNESS LOADING </div>
             </div>
             <div class="loader-percentage" id="loaderPercentage">0%</div>
         </div>
@@ -30,7 +30,6 @@
                 <a href="#resume" class="nav-link">[ RESUME ]</a>
                 <a href="#about" class="nav-link">[ ABOUT ME ]</a>
                 <a href="#works" class="nav-link">[ WORKS ]</a>
-                <a href="#services" class="nav-link">[ SERVICES ]</a>
                 <a href="#connect" class="nav-link">[ CONNECT ]</a>
             </div>
             <a href="#connect" class="contact-link">CONTACT ME <span class="arrow">↗</span></a>
@@ -62,7 +61,9 @@
                 </div>
                 
                 <div class="hero-bio">
-                    <p>I'M A MOTIVATED MASTERS STUDENT IN MECHANICAL ENGINEERING AT CARNEGIE MELLON UNIVERSITY, PURSUING EXCELLENCE IN RESEARCH WITH A 4.0 GPA. MY PASSION LIES IN ADVANCING THE FRONTIERS OF MACHINE LEARNING, ROBOTICS, AND COMPUTATIONAL ENGINEERING. I AM ACTIVELY SEEKING OPPORTUNITIES TO CONTINUE MY ACADEMIC JOURNEY THROUGH A PHD PROGRAM, WHERE I CAN CONTRIBUTE TO GROUNDBREAKING RESEARCH AND INNOVATION.</p>
+                    <p>I'M A MOTIVATED MASTERS STUDENT IN MECHANICAL ENGINEERING AT CARNEGIE MELLON UNIVERSITY, 
+                        PURSUING EXCELLENCE IN MECHANICAL ENGINEERING RESEARCH. BRIDGING THE GAP BETWEEN PHYSICAL SYSTEMS AND INTELLIGENT ALGORITHMS. MY WORK FOCUSES ON INTEGRATING AI INTO MECHANICAL SYSTEMS TO IMPROVE PERFORMANCE, ADAPTABILITY, AND AUTONOMY. FROM SMART ROBOTICS AND CONTROL SYSTEMS TO INTELLIGENT DESIGN OPTIMIZATION.
+                        I’M DRIVEN BY CURIOSITY AND THE POTENTIAL OF INTERDISCIPLINARY INNOVATION. I BELIEVE THE FUTURE OF ENGINEERING LIES AT THE INTERSECTION OF DATA, MECHANICS, AND INTELLIGENT DECISION-MAKING, AND I’M HERE TO HELP BUILD IT.</p>
                 </div>
             </div>
             
@@ -100,7 +101,8 @@
     <section class="resume-content-detailed">
         <div class="section-container">
             <div class="resume-download-header">
-                <button class="download-btn-resume" onclick="window.print()">DOWNLOAD PDF →</button>
+                
+                <a class="download-btn-resume" href="resume.pdf" download="resume.pdf">DOWNLOAD MY RESUME PDF →</a>
             </div>
             <div class="resume-detailed-content">
                 <div class="resume-section-item">
@@ -130,7 +132,7 @@
                         <h4>Graduate Researcher - RoboConstruction Team</h4>
                         <p class="resume-meta">CERLAB, CMU, Pittsburgh | Aug 2024 - May 2025</p>
                         <ul class="resume-bullets">
-                            <li>Developed an Isaac Sim simulation environment for SLAM test bed with the ultimate goal of developing a SLAM algorithm for mining environment.</li>
+                            <li>Developed an Isaac Sim simulation environment for SLAM test bed with the ultimate goal of developing a SLAM algorithm for a mining environment.</li>
                             <li>Simulated different LiDARs and camera integration for simple hauling and loading operation for the wheel loader in a simulated environment.</li>
                         </ul>
                     </div>
@@ -181,6 +183,7 @@
     <section class="about-content-section">
         <div class="section-container">
             <div class="about-detailed-content">
+                <!--
                 <div class="about-text-block">
                     <h3>EDUCATION</h3>
                     <div class="education-item">
@@ -196,6 +199,7 @@
                         <p class="education-desc">Strong foundation in mechanical engineering principles, computational methods, and design. Completed thesis on pedicle screw fixation design using finite element analysis.</p>
                     </div>
                 </div>
+                -->
                 
                 <div class="about-text-block">
                     <h3>RESEARCH PHILOSOPHY</h3>
@@ -254,7 +258,7 @@
                     <div class="project-number">01</div>
                     <h3 class="project-title-minimal">WATER PURITY DETECTION SYSTEM</h3>
                     <p class="project-date">Aug - Dec 2024</p>
-                    <p class="project-desc-minimal">Developed a bio-inspired soft robotic device that monitors water quality and detects potential of hydrogen (pH) levels in water bodies. This project addresses the limitations of stationary sensors and manual sampling methods by creating an autonomous underwater drone system capable of dynamic water quality monitoring in real-time.</p>
+                    <p class="project-desc-minimal">To address the limitations of stationary water-quality sensors and slow manual sampling, I developed a bio-inspired soft robotic underwater drone capable of autonomously monitoring pH levels in real time. Clean-water access is a growing global concern, and this project contributes by enabling dynamic environmental sensing in areas conventional probes cannot reach. I designed the soft-robotic structure, integrated pH sensors with IoT hardware, and programmed the navigation and data-collection system in Python. The prototype demonstrated stable and repeatable pH measurements with less than 5% drift while significantly improving spatial coverage through mobile sensing. The results show that a soft-robotic platform can provide effective, continuous water-quality surveillance, offering a promising alternative to fixed monitoring stations.</p>
                     <div class="project-tags-minimal">
                         <span>PYTHON</span>
                         <span>ROBOTICS</span>
@@ -267,7 +271,7 @@
                     <div class="project-number">02</div>
                     <h3 class="project-title-minimal">DEEPFAKE VOICE DETECTION</h3>
                     <p class="project-date">Jan - May 2025</p>
-                    <p class="project-desc-minimal">Implemented a Reinforcement Learning-based neural architecture search framework for deepfake voice detection. Established comprehensive data processing pipeline for audio preprocessing and feature extraction. Achieved state-of-the-art performance with an Equal Error Rate (EER) of 2.8% using baseline models trained for 50 epochs. Currently refining the NAS framework for optimal architecture discovery.</p>
+                    <p class="project-desc-minimal">Deepfake audio poses serious risks to security and privacy, motivating the need for more robust detection systems. In this project, I built a reinforcement learning–based neural architecture search (NAS) framework to automatically design models for deepfake voice detection. I implemented a complete audio-processing pipeline—including log-mel feature extraction—and trained baseline CNN models in PyTorch, achieving a strong Equal Error Rate (EER) of 2.8% after 50 epochs. I then integrated a policy-gradient RL controller to explore new model architectures and evaluate their performance. This system not only achieved state-of-the-art baseline performance but also began identifying more parameter-efficient architectures. My role covered the full workflow from preprocessing and model design to RL integration and evaluation, demonstrating the effectiveness and potential of NAS for advancing audio deepfake detection.</p>
                     <div class="project-tags-minimal">
                         <span>PYTORCH</span>
                         <span>REINFORCEMENT LEARNING</span>
@@ -280,7 +284,7 @@
                     <div class="project-number">03</div>
                     <h3 class="project-title-minimal">SLAM SIMULATION ENVIRONMENT</h3>
                     <p class="project-date">Aug 2024 - May 2025</p>
-                    <p class="project-desc-minimal">Developed an Isaac Sim simulation environment for SLAM test bed with the ultimate goal of creating SLAM algorithms for mining environments. Simulated different LiDAR and camera integrations for simple hauling and loading operations for wheel loaders in complex simulated environments. This work contributes to autonomous navigation in challenging industrial settings.</p>
+                    <p class="project-desc-minimal">Mining sites are hazardous, making real-world SLAM experimentation costly and risky. To support safe autonomy research, I created a high-fidelity Isaac Sim environment for evaluating SLAM algorithms in wheel-loader hauling and loading operations. I designed complex terrain, dynamic obstacles, and realistic mining layouts, and integrated ROS2 communication along with LiDAR and stereo camera simulations. This environment produced high-quality sensor data for testing mapping, localization, and multi-sensor fusion algorithms under repeatable conditions. By replacing dangerous real-mine testing with virtual experimentation, the system proved highly effective for early-stage SLAM development. I was responsible for building the full simulation world, configuring sensors, scripting operations, and validating the data pipelines.</p>
                     <div class="project-tags-minimal">
                         <span>C++</span>
                         <span>ROS</span>
@@ -293,7 +297,7 @@
                     <div class="project-number">04</div>
                     <h3 class="project-title-minimal">GRAPH NEURAL NETWORKS FOR ENGINEERING DRAWINGS</h3>
                     <p class="project-date">May 2025 - Present</p>
-                    <p class="project-desc-minimal">Working on graph neural networks for engineering drawing classification and automated image marking. This research involves studying state-of-the-art papers and developing novel approaches for understanding and processing technical drawings using deep learning techniques.</p>
+                    <p class="project-desc-minimal">Engineering drawings are essential for manufacturing but require tedious manual interpretation, which introduces opportunities for error. To streamline this process, I am developing graph neural network (GNN) models that classify drawings and automatically identify important geometric features. I reviewed state-of-the-art GNN research, converted technical drawings into graph-based representations, and implemented prototype models using PyTorch Geometric. Early results show promising accuracy in recognizing structural features and relationships across varying drawing styles, indicating strong potential for automated design review tools. My role includes literature review, dataset creation, model development, and ongoing experimentation as part of broader research into intelligent engineering-drawing analysis.</p>
                     <div class="project-tags-minimal">
                         <span>PYTORCH</span>
                         <span>GRAPH NEURAL NETWORKS</span>
@@ -306,8 +310,8 @@
                     <div class="project-number">05</div>
                     <h3 class="project-title-minimal">PEDICLE SCREW FIXATION DESIGN</h3>
                     <p class="project-date">Jan - May 2023</p>
-                    <p class="project-desc-minimal">Developed finite element models to study pedicle screw fixation and the effect of screw variations by analyzing different sizes and materials. Observed stress distribution patterns on different screws with varying forces applied on vertebrae, contributing to improved spinal implant design.</p>
-                    <div class="project-tags-minimal">
+                    <p class="project-desc-minimal">Pedicle screws play a critical role in spinal surgeries, where poor fixation can lead to severe complications. To support better implant design, I conducted finite element studies analyzing how variations in screw geometry and material affect stress distribution in vertebrae. I modeled different screw configurations in SolidWorks, applied realistic loading conditions, and evaluated stress patterns through FEA simulations, using MATLAB for post-processing and visualization. The study showed that titanium designs reduced peak stresses and provided more uniform load transfer, offering guidance for safer and more reliable spinal implants. I carried out the modeling, simulation execution, and comparative analysis, demonstrating the effectiveness of computational tools for improving orthopedic device performance.</p>
+                    <div class="project-tags-minimal">          
                         <span>FEA</span>
                         <span>SOLIDWORKS</span>
                         <span>BIOMECHANICS</span>
@@ -322,7 +326,7 @@
     <section class="services-section-split" id="services">
         <div class="split-section-top">
             <div class="section-content-top">
-                <h2 class="section-title-large">SERVICES</h2>
+                <h2 class="section-title-large">MY EXPERTISE</h2>
             </div>
         </div>
         <div class="split-section-bottom">
@@ -331,7 +335,7 @@
                 <div class="section-text-wrapper">
                     <p class="section-prefix">WHAT I</p>
                     <h3 class="section-title-bottom">OFFER</h3>
-                    <p class="section-subtitle-bottom">EXPERTISE</p>
+                    <p class="section-subtitle-bottom">IN THE FIELD OF ENGINEERING</p>
                 </div>
                 <div class="section-identifier">SRVC/4</div>
             </div>
