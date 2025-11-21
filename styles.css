@@ -73,20 +73,41 @@ table {
 
 .text-ring-3d {
     position: relative;
-    width: min(520px, 90vw);
-    height: min(520px, 90vw);
+    width: min(560px, 92vw);
+    aspect-ratio: 1 / 1;
     display: grid;
     place-items: center;
     transform-style: preserve-3d;
     animation: spin3d 9s linear infinite;
 }
 
-.loader-image {
+.ring-container {
+    width: 78%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    transform: rotateX(62deg);
+    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.12));
+}
+
+.loader-ring {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.15));
-    transform-origin: center;
+}
+
+.loader-ring-outline {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.15);
+    stroke-width: 3;
+}
+
+.loader-ring-text {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    fill: var(--black);
 }
 
 .loader-text-overlay {
@@ -105,10 +126,10 @@ table {
 
 @keyframes spin3d {
     0% {
-        transform: rotateX(25deg) rotateY(0deg) rotateZ(0deg);
+        transform: rotateX(24deg) rotateY(0deg) rotateZ(0deg);
     }
     100% {
-        transform: rotateX(25deg) rotateY(360deg) rotateZ(360deg);
+        transform: rotateX(24deg) rotateY(360deg) rotateZ(360deg);
     }
 }
 

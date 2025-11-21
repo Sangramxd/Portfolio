@@ -1,57 +1,3 @@
-// Build a PNG loader ring using canvas so the asset can spin in 3D
-function generateLoaderImage() {
-    const loaderImage = document.getElementById('loaderImage');
-    if (!loaderImage) return;
-
-    const canvas = document.createElement('canvas');
-    const size = 640;
-    const radius = 230;
-    canvas.width = size;
-    canvas.height = size;
-
-    const ctx = canvas.getContext('2d');
-    const center = size / 2;
-
-    ctx.translate(center, center);
-
-    // Draw ring
-    ctx.beginPath();
-    ctx.arc(0, 0, radius, 0, Math.PI * 2);
-    ctx.lineWidth = 8;
-    ctx.strokeStyle = '#000000';
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.fillStyle = '#ffffff';
-    ctx.arc(0, 0, radius - 18, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Circular text
-    const text = 'GREATNESS LOADING · ';
-    ctx.fillStyle = '#000000';
-    ctx.font = '700 20px "Space Grotesk", "Inter", sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    for (let i = 0; i < text.length; i++) {
-        const angle = (i / text.length) * Math.PI * 2;
-        const x = Math.cos(angle) * (radius - 10);
-        const y = Math.sin(angle) * (radius - 10);
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.rotate(angle + Math.PI / 2);
-        ctx.fillText(text[i], 0, 0);
-        ctx.restore();
-    }
-
-    // Center text
-    ctx.font = '900 42px "Space Grotesk", "Inter", sans-serif';
-    ctx.fillText('GREATNESS', 0, -18);
-    ctx.fillText('LOADING', 0, 32);
-
-    loaderImage.src = canvas.toDataURL('image/png');
-}
-
 // Page Loader Animation
 function initPageLoader() {
     const loader = document.getElementById('pageLoader');
@@ -59,9 +5,6 @@ function initPageLoader() {
 
     if (!loader || !loaderPercentage) return;
 
-    // Create rotating loader image
-    generateLoaderImage();
-    
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.random() * 8 + 2;
