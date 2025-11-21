@@ -1076,6 +1076,54 @@ table {
     font-family: 'Space Grotesk', monospace;
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    right: clamp(1.5rem, 3vw, 3rem);
+    bottom: clamp(2rem, 4vw, 4rem);
+    width: 50px;
+    height: 50px;
+    background: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+.scroll-arrow {
+    display: block;
+    line-height: 1;
+    font-family: 'Inter', sans-serif;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero-title-large {
