@@ -1,64 +1,10 @@
-// Create 3D Rotating Text Ring for Loader
-function createTextRing() {
-    const textRing = document.getElementById('textRing3D');
-    if (!textRing) return;
-    
-    const text = "GREATNESS LOADING ";
-    const radius = 270;
-    const centerX = 300;
-    const centerY = 300;
-    
-    // Create SVG for circular text
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('width', '600');
-    svg.setAttribute('height', '600');
-    svg.setAttribute('viewBox', '0 0 600 600');
-    svg.style.transformStyle = 'preserve-3d';
-    
-    // Create circle path
-    const circlePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    // Create a full circle path
-    const pathData = `M ${centerX}, ${centerY - radius} A ${radius}, ${radius} 0 0, 1 ${centerX + radius}, ${centerY} A ${radius}, ${radius} 0 0, 1 ${centerX}, ${centerY + radius} A ${radius}, ${radius} 0 0, 1 ${centerX - radius}, ${centerY} A ${radius}, ${radius} 0 0, 1 ${centerX}, ${centerY - radius}`;
-    circlePath.setAttribute('id', 'textCircle');
-    circlePath.setAttribute('d', pathData);
-    circlePath.setAttribute('fill', 'none');
-    
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    defs.appendChild(circlePath);
-    svg.appendChild(defs);
-    
-    // Create text element
-    const textElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    textElement.setAttribute('font-size', '32');
-    textElement.setAttribute('font-weight', '900');
-    textElement.setAttribute('fill', '#000000');
-    textElement.setAttribute('letter-spacing', '0.2em');
-    textElement.setAttribute('text-transform', 'uppercase');
-    
-    // Create textPath
-    const textPath = document.createElementNS('http://www.w3.org/2000/svg', 'textPath');
-    textPath.setAttribute('href', '#textCircle');
-    textPath.setAttribute('startOffset', '0%');
-    textPath.textContent = text + ' ' + text; // Duplicate for continuous loop
-    
-    textElement.appendChild(textPath);
-    svg.appendChild(textElement);
-    
-    // Clear and add SVG
-    textRing.innerHTML = '';
-    textRing.appendChild(svg);
-}
-
 // Page Loader Animation
 function initPageLoader() {
     const loader = document.getElementById('pageLoader');
     const loaderPercentage = document.getElementById('loaderPercentage');
-    
+
     if (!loader || !loaderPercentage) return;
-    
-    // Create text ring
-    createTextRing();
-    
+
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.random() * 8 + 2;

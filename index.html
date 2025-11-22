@@ -14,7 +14,20 @@
     <div class="page-loader" id="pageLoader">
         <div class="loader-wrapper">
             <div class="text-ring-3d" id="textRing3D">
-                <div class="ring-text">GREATNESS LOADING </div>
+                <div class="ring-container">
+                    <svg class="loader-ring" viewBox="0 0 200 200" aria-hidden="true">
+                        <defs>
+                            <path id="loaderTextPath" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0" />
+                        </defs>
+                        <circle class="loader-ring-outline" cx="100" cy="100" r="70" />
+                        <text class="loader-ring-text">
+                            <textPath href="#loaderTextPath" startOffset="0%">
+                                GREATNESS LOADING • GREATNESS LOADING • GREATNESS LOADING • GREATNESS LOADING •
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <div class="loader-text-overlay">GREATNESS LOADING</div>
             </div>
             <div class="loader-percentage" id="loaderPercentage">0%</div>
         </div>
