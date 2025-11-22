@@ -5,43 +5,23 @@ function initPageLoader() {
 
     if (!loader || !splineLoader) return;
 
-    const iframe = splineLoader.querySelector('iframe');
-    let iframeLoaded = false;
-    let animationStartTime = null;
+    // Start timer immediately - don't wait for iframe to load
+    // This ensures consistent timing regardless of network speed
+    const startTime = Date.now();
+    const maxDuration = 3000; // Maximum 3 seconds
     
-    // Wait for iframe to load
-    if (iframe) {
-        iframe.addEventListener('load', () => {
-            iframeLoaded = true;
-            animationStartTime = Date.now();
-            
-            // Wait for the Spline animation to complete
-            // Most Spline animations complete in 3-5 seconds, adjust as needed
-            const animationDuration = 4000; // 4 seconds - adjust based on your animation length
-            
-            setTimeout(() => {
-                // Fade out the loader
-                loader.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
-                loader.classList.add('hidden');
-                
-                // Allow scrolling after fade out
-                setTimeout(() => {
-                    document.body.style.overflow = 'auto';
-                    initAnimations();
-                }, 800);
-            }, animationDuration);
-        });
-    }
-    
-    // Fallback: if iframe doesn't load within 10 seconds, hide loader anyway
-    setTimeout(() => {
-        if (!iframeLoaded) {
-            loader.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
-            loader.classList.add('hidden');
+    const hideLoader = () => {
+        loader.style.transition = 'opacity 0.2s ease, visibility 0.2s ease';
+        loader.classList.add('hidden');
+        
+        setTimeout(() => {
             document.body.style.overflow = 'auto';
             initAnimations();
-        }
-    }, 10000);
+        }, 200);
+    };
+    
+    // Hide loader after fixed duration
+    setTimeout(hideLoader, maxDuration);
 }
 
 // Image lazy loading and error handling
