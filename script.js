@@ -1,37 +1,47 @@
 // Page Loader Animation with Spline
 function initPageLoader() {
     const loader = document.getElementById('pageLoader');
-    const loaderPercentage = document.getElementById('loaderPercentage');
     const splineLoader = document.getElementById('splineLoader');
 
-    if (!loader || !loaderPercentage) return;
+    if (!loader || !splineLoader) return;
 
-    let progress = 0;
-    const iframe = splineLoader?.querySelector('iframe');
+    const iframe = splineLoader.querySelector('iframe');
+    let iframeLoaded = false;
+    let animationStartTime = null;
     
     // Wait for iframe to load
     if (iframe) {
         iframe.addEventListener('load', () => {
-            // Spline iframe is loaded
+            iframeLoaded = true;
+            animationStartTime = Date.now();
+            
+            // Wait for the Spline animation to complete
+            // Most Spline animations complete in 3-5 seconds, adjust as needed
+            const animationDuration = 4000; // 4 seconds - adjust based on your animation length
+            
+            setTimeout(() => {
+                // Fade out the loader
+                loader.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
+                loader.classList.add('hidden');
+                
+                // Allow scrolling after fade out
+                setTimeout(() => {
+                    document.body.style.overflow = 'auto';
+                    initAnimations();
+                }, 800);
+            }, animationDuration);
         });
     }
-
-    const progressInterval = setInterval(() => {
-        progress += Math.random() * 8 + 2;
-        if (progress > 100) progress = 100;
-        
-        loaderPercentage.textContent = Math.floor(progress) + '%';
-        
-        if (progress >= 100) {
-            clearInterval(progressInterval);
-            // Give a bit more time for Spline animation to be visible
-            setTimeout(() => {
-                loader.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-                initAnimations();
-            }, 800);
+    
+    // Fallback: if iframe doesn't load within 10 seconds, hide loader anyway
+    setTimeout(() => {
+        if (!iframeLoaded) {
+            loader.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
+            loader.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            initAnimations();
         }
-    }, 100);
+    }, 10000);
 }
 
 // Image lazy loading and error handling
