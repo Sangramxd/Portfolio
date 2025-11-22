@@ -71,66 +71,23 @@ table {
     perspective: 1200px;
 }
 
-.text-ring-3d {
+.spline-loader-container {
     position: relative;
-    width: min(560px, 92vw);
-    aspect-ratio: 1 / 1;
-    display: grid;
-    place-items: center;
-    transform-style: preserve-3d;
-    animation: spin3d 9s linear infinite;
-}
-
-.ring-container {
-    width: 78%;
-    aspect-ratio: 1 / 1;
-    display: grid;
-    place-items: center;
-    transform: rotateX(62deg);
-    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.12));
-}
-
-.loader-ring {
-    width: 100%;
-    height: 100%;
-}
-
-.loader-ring-outline {
-    fill: none;
-    stroke: rgba(0, 0, 0, 0.15);
-    stroke-width: 3;
-}
-
-.loader-ring-text {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    fill: var(--black);
-}
-
-.loader-text-overlay {
-    position: absolute;
-    inset: 0;
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-align: center;
-    mix-blend-mode: multiply;
+    overflow: hidden;
 }
 
-@keyframes spin3d {
-    0% {
-        transform: rotateX(24deg) rotateY(0deg) rotateZ(0deg);
-    }
-    100% {
-        transform: rotateX(24deg) rotateY(360deg) rotateZ(360deg);
-    }
+.spline-loader-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    pointer-events: auto;
 }
 
 .loader-percentage {

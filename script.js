@@ -1,24 +1,35 @@
-// Page Loader Animation
+// Page Loader Animation with Spline
 function initPageLoader() {
     const loader = document.getElementById('pageLoader');
     const loaderPercentage = document.getElementById('loaderPercentage');
+    const splineLoader = document.getElementById('splineLoader');
 
     if (!loader || !loaderPercentage) return;
 
     let progress = 0;
-    const interval = setInterval(() => {
+    const iframe = splineLoader?.querySelector('iframe');
+    
+    // Wait for iframe to load
+    if (iframe) {
+        iframe.addEventListener('load', () => {
+            // Spline iframe is loaded
+        });
+    }
+
+    const progressInterval = setInterval(() => {
         progress += Math.random() * 8 + 2;
         if (progress > 100) progress = 100;
         
         loaderPercentage.textContent = Math.floor(progress) + '%';
         
         if (progress >= 100) {
-            clearInterval(interval);
+            clearInterval(progressInterval);
+            // Give a bit more time for Spline animation to be visible
             setTimeout(() => {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'auto';
                 initAnimations();
-            }, 500);
+            }, 800);
         }
     }, 100);
 }
