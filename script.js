@@ -1,29 +1,3 @@
-// Page Loader Animation with Spline
-function initPageLoader() {
-    const loader = document.getElementById('pageLoader');
-    const splineLoader = document.getElementById('splineLoader');
-
-    if (!loader || !splineLoader) return;
-
-    // Start timer immediately - don't wait for iframe to load
-    // This ensures consistent timing regardless of network speed
-    const startTime = Date.now();
-    const maxDuration = 3000; // Maximum 3 seconds
-    
-    const hideLoader = () => {
-        loader.style.transition = 'opacity 0.2s ease, visibility 0.2s ease';
-        loader.classList.add('hidden');
-        
-        setTimeout(() => {
-            document.body.style.overflow = 'auto';
-            initAnimations();
-        }, 200);
-    };
-    
-    // Hide loader after fixed duration
-    setTimeout(hideLoader, maxDuration);
-}
-
 // Image lazy loading and error handling
 function initImageHandling() {
     const heroPortrait = document.getElementById('heroPortrait');
@@ -184,8 +158,7 @@ function initAnimations() {
 
 // Initialize on page load
 window.addEventListener('load', () => {
-    document.body.style.overflow = 'hidden';
-    initPageLoader();
+    initAnimations();
 });
 
 // Scroll to Top Button
